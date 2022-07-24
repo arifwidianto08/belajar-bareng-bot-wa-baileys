@@ -87,11 +87,11 @@ export class BotService {
   }
 
   async sendMessage(data: SendMessageDto) {
-    const isValidToken = this.bots.find((b) => b.token === data.token);
+    // const isValidToken = this.bots.find((b) => b.token === data.token);
 
-    if (!isValidToken) {
-      throw new Error(`Invalid Token`);
-    }
+    // if (!isValidToken) {
+    //   throw new Error(`Invalid Token`);
+    // }
 
     return await sock.sendMessage(`${data.phone}@s.whatsapp.net`, {
       text: data.message,
